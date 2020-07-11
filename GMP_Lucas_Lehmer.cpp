@@ -52,10 +52,7 @@ void LLtest(const uint32_t p) {
 		std::cout << "iteration " << i << " / " << p - 2 << ", time = " << elapsed << " ms" << std::endl;
 	}
 
-	const auto ans1 = mpz_sgn(interger_a1);
-	const auto ans2 = mpz_cmp(interger_a1, interger_mp);
-
-	if (mpz_sgn(interger_a1) == 0 || mpz_cmp(interger_a1, interger_mp) == 0) {
+	if (mpz_sgn(interger_a1) == 0) {
 		std::cout << "2^" << p << "-1 is a prime!" << std::endl;
 	}
 	else {
