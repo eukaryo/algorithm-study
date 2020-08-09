@@ -1,0 +1,88 @@
+start: prep: LLtest_IBDWT(q = 412876283, N = 25165824, maxiter = 40, threads = 1, planning time limit = 1000)
+FFTW3 1D real -> Hermitian conjugate -> real, PATIENT: TIME_LIMIT = 1000
+iteration 1 / 412876281, error_sum = 0, error_max = 0, totaltime = 701 ms, raptime = 701 ms, borrow = 108 ms
+iteration 2 / 412876281, error_sum = 0, error_max = 0, totaltime = 1403 ms, raptime = 701 ms, borrow = 108 ms
+iteration 3 / 412876281, error_sum = 0, error_max = 0, totaltime = 2104 ms, raptime = 701 ms, borrow = 108 ms
+iteration 4 / 412876281, error_sum = 0, error_max = 0, totaltime = 2806 ms, raptime = 701 ms, borrow = 108 ms
+iteration 5 / 412876281, error_sum = 0.00111919, error_max = 2.38419e-07, totaltime = 3510 ms, raptime = 703 ms, borrow = 108 ms
+iteration 6 / 412876281, error_sum = 0.00379267, error_max = 4.76837e-07, totaltime = 4215 ms, raptime = 705 ms, borrow = 108 ms
+iteration 7 / 412876281, error_sum = 0.00839581, error_max = 7.15256e-07, totaltime = 4920 ms, raptime = 705 ms, borrow = 108 ms
+iteration 8 / 412876281, error_sum = 0.0430165, error_max = 1.90735e-06, totaltime = 5625 ms, raptime = 705 ms, borrow = 108 ms
+iteration 9 / 412876281, error_sum = 0.0406024, error_max = 2.86102e-06, totaltime = 6330 ms, raptime = 705 ms, borrow = 108 ms
+iteration 10 / 412876281, error_sum = 0.121771, error_max = 3.8147e-06, totaltime = 7035 ms, raptime = 705 ms, borrow = 108 ms
+iteration 11 / 412876281, error_sum = 0.204999, error_max = 5.72205e-06, totaltime = 7740 ms, raptime = 704 ms, borrow = 108 ms
+iteration 12 / 412876281, error_sum = 0.520512, error_max = 1.52588e-05, totaltime = 8445 ms, raptime = 704 ms, borrow = 108 ms
+iteration 13 / 412876281, error_sum = 1.08235, error_max = 1.52588e-05, totaltime = 9150 ms, raptime = 705 ms, borrow = 108 ms
+iteration 14 / 412876281, error_sum = 2.36051, error_max = 3.05176e-05, totaltime = 9855 ms, raptime = 704 ms, borrow = 108 ms
+iteration 15 / 412876281, error_sum = 4.91309, error_max = 6.10352e-05, totaltime = 10560 ms, raptime = 705 ms, borrow = 108 ms
+iteration 16 / 412876281, error_sum = 9.69205, error_max = 0.00012207, totaltime = 11266 ms, raptime = 705 ms, borrow = 108 ms
+iteration 17 / 412876281, error_sum = 20.6042, error_max = 0.000183105, totaltime = 11971 ms, raptime = 705 ms, borrow = 108 ms
+iteration 18 / 412876281, error_sum = 41.5448, error_max = 0.000244141, totaltime = 12677 ms, raptime = 705 ms, borrow = 108 ms
+iteration 19 / 412876281, error_sum = 86.8914, error_max = 0.000366211, totaltime = 13382 ms, raptime = 705 ms, borrow = 108 ms
+iteration 20 / 412876281, error_sum = 179.981, error_max = 0.000732422, totaltime = 14087 ms, raptime = 705 ms, borrow = 108 ms
+iteration 21 / 412876281, error_sum = 372.345, error_max = 0.000732422, totaltime = 14793 ms, raptime = 705 ms, borrow = 108 ms
+iteration 22 / 412876281, error_sum = 762.7, error_max = 0.0012207, totaltime = 15498 ms, raptime = 705 ms, borrow = 108 ms
+iteration 23 / 412876281, error_sum = 1577.15, error_max = 0.00195312, totaltime = 16203 ms, raptime = 705 ms, borrow = 108 ms
+iteration 24 / 412876281, error_sum = 3201.07, error_max = 0.00292969, totaltime = 16909 ms, raptime = 705 ms, borrow = 108 ms
+iteration 25 / 412876281, error_sum = 6542.49, error_max = 0.00488281, totaltime = 17614 ms, raptime = 705 ms, borrow = 108 ms
+iteration 26 / 412876281, error_sum = 13415.5, error_max = 0.0078125, totaltime = 18319 ms, raptime = 705 ms, borrow = 108 ms
+iteration 27 / 412876281, error_sum = 27473.7, error_max = 0.0136719, totaltime = 19025 ms, raptime = 705 ms, borrow = 108 ms
+iteration 28 / 412876281, error_sum = 55656.6, error_max = 0.0195312, totaltime = 19731 ms, raptime = 705 ms, borrow = 108 ms
+iteration 29 / 412876281, error_sum = 90915.3, error_max = 0.03125, totaltime = 20436 ms, raptime = 705 ms, borrow = 108 ms
+iteration 30 / 412876281, error_sum = 90834.9, error_max = 0.03125, totaltime = 21142 ms, raptime = 706 ms, borrow = 108 ms
+iteration 31 / 412876281, error_sum = 90879.5, error_max = 0.0351562, totaltime = 21848 ms, raptime = 705 ms, borrow = 108 ms
+iteration 32 / 412876281, error_sum = 90871.2, error_max = 0.0332031, totaltime = 22554 ms, raptime = 706 ms, borrow = 108 ms
+iteration 33 / 412876281, error_sum = 90874.4, error_max = 0.0351562, totaltime = 23260 ms, raptime = 705 ms, borrow = 108 ms
+iteration 34 / 412876281, error_sum = 90871.9, error_max = 0.0351562, totaltime = 23966 ms, raptime = 705 ms, borrow = 108 ms
+iteration 35 / 412876281, error_sum = 90926.7, error_max = 0.03125, totaltime = 24672 ms, raptime = 705 ms, borrow = 108 ms
+iteration 36 / 412876281, error_sum = 90911.3, error_max = 0.03125, totaltime = 25377 ms, raptime = 705 ms, borrow = 108 ms
+iteration 37 / 412876281, error_sum = 90896.7, error_max = 0.0351562, totaltime = 26083 ms, raptime = 705 ms, borrow = 108 ms
+iteration 38 / 412876281, error_sum = 90907.2, error_max = 0.0351562, totaltime = 26789 ms, raptime = 706 ms, borrow = 108 ms
+iteration 39 / 412876281, error_sum = 90865.9, error_max = 0.0351562, totaltime = 27495 ms, raptime = 706 ms, borrow = 108 ms
+iteration 40 / 412876281, error_sum = 90872.6, error_max = 0.0351562, totaltime = 28201 ms, raptime = 705 ms, borrow = 108 ms
+number =
+0xfcf51cd4d87630d83a7497d3ca9935d2
+start: prep: LLtest_GMP(q = 412876283, maxiter = 40)
+start: LLtest_GMP
+iteration 1 / 412876281, time = 22 ms, raptime = 22 ms
+iteration 2 / 412876281, time = 32 ms, raptime = 9 ms
+iteration 3 / 412876281, time = 42 ms, raptime = 9 ms
+iteration 4 / 412876281, time = 52 ms, raptime = 9 ms
+iteration 5 / 412876281, time = 61 ms, raptime = 9 ms
+iteration 6 / 412876281, time = 71 ms, raptime = 9 ms
+iteration 7 / 412876281, time = 81 ms, raptime = 9 ms
+iteration 8 / 412876281, time = 91 ms, raptime = 9 ms
+iteration 9 / 412876281, time = 101 ms, raptime = 9 ms
+iteration 10 / 412876281, time = 111 ms, raptime = 9 ms
+iteration 11 / 412876281, time = 120 ms, raptime = 9 ms
+iteration 12 / 412876281, time = 130 ms, raptime = 9 ms
+iteration 13 / 412876281, time = 140 ms, raptime = 9 ms
+iteration 14 / 412876281, time = 150 ms, raptime = 9 ms
+iteration 15 / 412876281, time = 160 ms, raptime = 9 ms
+iteration 16 / 412876281, time = 170 ms, raptime = 9 ms
+iteration 17 / 412876281, time = 180 ms, raptime = 10 ms
+iteration 18 / 412876281, time = 190 ms, raptime = 10 ms
+iteration 19 / 412876281, time = 201 ms, raptime = 10 ms
+iteration 20 / 412876281, time = 213 ms, raptime = 11 ms
+iteration 21 / 412876281, time = 227 ms, raptime = 14 ms
+iteration 22 / 412876281, time = 246 ms, raptime = 18 ms
+iteration 23 / 412876281, time = 274 ms, raptime = 28 ms
+iteration 24 / 412876281, time = 328 ms, raptime = 53 ms
+iteration 25 / 412876281, time = 433 ms, raptime = 104 ms
+iteration 26 / 412876281, time = 671 ms, raptime = 238 ms
+iteration 27 / 412876281, time = 1189 ms, raptime = 518 ms
+iteration 28 / 412876281, time = 2403 ms, raptime = 1213 ms
+iteration 29 / 412876281, time = 4479 ms, raptime = 2075 ms
+iteration 30 / 412876281, time = 6524 ms, raptime = 2045 ms
+iteration 31 / 412876281, time = 8581 ms, raptime = 2056 ms
+iteration 32 / 412876281, time = 10625 ms, raptime = 2044 ms
+iteration 33 / 412876281, time = 12671 ms, raptime = 2045 ms
+iteration 34 / 412876281, time = 14716 ms, raptime = 2044 ms
+iteration 35 / 412876281, time = 16761 ms, raptime = 2045 ms
+iteration 36 / 412876281, time = 18806 ms, raptime = 2045 ms
+iteration 37 / 412876281, time = 20851 ms, raptime = 2044 ms
+iteration 38 / 412876281, time = 22905 ms, raptime = 2054 ms
+iteration 39 / 412876281, time = 24962 ms, raptime = 2056 ms
+iteration 40 / 412876281, time = 27007 ms, raptime = 2045 ms
+number = 
+0xfcf51cd4d87630d83a7497d3ca9935d2
