@@ -1,5 +1,3 @@
-### アルゴリズム
-
 #### DFPN_single_file.cpp
 
 https://eukaryote.hateblo.jp/entry/2020/05/03/133918
