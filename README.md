@@ -15,3 +15,8 @@ https://eukaryote.hateblo.jp/entry/2020/08/09/181731
 #### algorithm-library.cpp
 
 昔競プロやってたときに手元に持ってたやつ。
+
+#### hash_64bit.cpp
+
+64bit整数を全単射でハッシュする関数が欲しいときのために、Blowfish暗号とSplitMax64疑似乱数生成器を用意しておいた。
+SplitMax64の逆変換は元コードになかっので自作した。
