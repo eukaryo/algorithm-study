@@ -20,3 +20,8 @@ https://eukaryote.hateblo.jp/entry/2020/08/09/181731
 
 64bit整数を全単射でハッシュする関数が欲しいときのために、Blowfish暗号とSplitMax64疑似乱数生成器を用意しておいた。
 SplitMax64の逆変換は元コードになかっので自作した。
+
+#### CFR_japanese_document.pdf
+
+ブログに書くつもりだった文章で、分量が多くなったのでpdfにした。
+https://eukaryote.hateblo.jp/entry/2020/10/05/102555
