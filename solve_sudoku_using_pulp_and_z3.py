@@ -190,7 +190,7 @@ def main_func(sudoku_problem: str, solver):
 if __name__ == "__main__":
     args = sys.argv
     if len(args) != 2:
-        print("error: this program require just one argument.")
+        print("error: this program requires just one argument.")
         sys.exit(1)
     sudoku_problem = args[1].strip()
     if is_varid_sudoku_problem_string_format(sudoku_problem) is False:
