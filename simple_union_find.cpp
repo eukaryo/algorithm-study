@@ -18,10 +18,10 @@ public:
 
 	UnionFind(const int64_t N) :v(N), size(N) {
 		tree_num = N;
-        for (int64_t i = 0; i < N; ++i) {
-            v[i] = i;
-            size[i] = 1;
-        }
+		for (int64_t i = 0; i < N; ++i) {
+			v[i] = i;
+			size[i] = 1;
+		}
 	}
 
 	void unite(int64_t a, int64_t b) {
@@ -45,11 +45,11 @@ public:
 
 int main() {
 
-    UnionFind uf(100);
-    std::cout << (uf.same(24, 57) ? "same" : "not same") << std::endl;
-    uf.unite(24, 57);
-    std::cout << (uf.same(24, 57) ? "same" : "not same") << std::endl;
-    std::cout << "size = " << uf.get_size(24) << std::endl;
+	UnionFind uf(100);
+	std::cout << (uf.same(24, 57) ? "same" : "not same") << std::endl;
+	uf.unite(24, 57);
+	std::cout << (uf.same(24, 57) ? "same" : "not same") << std::endl;
+	std::cout << "size = " << uf.get_size(24) << std::endl;
 
-    return 0;
+	return 0;
 }
