@@ -35,7 +35,7 @@ public:
 		tree_num--;
 	}
 
-	bool same(int64_t a, int64_t b) { return find(a) == find(b); }
+	bool is_same(int64_t a, int64_t b) { return find(a) == find(b); }
 
 	int get_size(int64_t a) {
 		return size[find(a)];
@@ -46,9 +46,9 @@ public:
 int main() {
 
 	UnionFind uf(100);
-	std::cout << (uf.same(24, 57) ? "same" : "not same") << std::endl;
+	std::cout << (uf.is_same(24, 57) ? "same" : "not same") << std::endl;
 	uf.unite(24, 57);
-	std::cout << (uf.same(24, 57) ? "same" : "not same") << std::endl;
+	std::cout << (uf.is_same(24, 57) ? "same" : "not same") << std::endl;
 	std::cout << "size = " << uf.get_size(24) << std::endl;
 
 	return 0;
