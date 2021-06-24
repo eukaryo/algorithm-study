@@ -31,7 +31,6 @@ public:
 		tree_num++;
 	}
 
-
 	void unite(int64_t a, int64_t b) {
 		a = find(a);
 		b = find(b);
