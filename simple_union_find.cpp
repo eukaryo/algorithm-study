@@ -23,6 +23,14 @@ public:
 			size[i] = 1;
 		}
 	}
+	
+	void make_set() {
+		const int64_t N = v.size();
+		v.push_back(N);
+		size[N] = 1;
+		tree_num++;
+	}
+
 
 	void unite(int64_t a, int64_t b) {
 		a = find(a);
