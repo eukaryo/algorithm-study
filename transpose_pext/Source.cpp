@@ -35,7 +35,7 @@
 #include <immintrin.h>
 
 uint64_t transpose_bitboard_basic(uint64_t b) {
-	//ˆø”‚ª8x8 bitboard‚¾‚Æ‚µ‚ÄA“]’u‚µ‚Ä•Ô‚·B
+	//å¼•æ•°ãŒ8x8 bitboardã ã¨ã—ã¦ã€è»¢ç½®ã—ã¦è¿”ã™ã€‚
 
 	uint64_t t;
 
@@ -50,7 +50,7 @@ uint64_t transpose_bitboard_basic(uint64_t b) {
 }
 
 uint64_t transpose_bitboard_avx2(uint64_t b) {
-	//ˆø”‚ª8x8 bitboard‚¾‚Æ‚µ‚ÄA“]’u‚µ‚Ä•Ô‚·B
+	//å¼•æ•°ãŒ8x8 bitboardã ã¨ã—ã¦ã€è»¢ç½®ã—ã¦è¿”ã™ã€‚
 
 	const __m256i bb = _mm256_set1_epi64x(b);
 	const __m256i x1 = _mm256_sllv_epi64(bb, _mm256_set_epi64x(0, 1, 2, 3));
@@ -61,24 +61,8 @@ uint64_t transpose_bitboard_avx2(uint64_t b) {
 	return (uint64_t(uint32_t(y1)) << 32) + uint64_t(uint32_t(y2));
 }
 
-uint64_t transpose_bitboard_sse2(uint64_t b) {
-	//ˆø”‚ª8x8 bitboard‚¾‚Æ‚µ‚ÄA“]’u‚µ‚Ä•Ô‚·B
-
-	const __m128i bb = _mm_set1_epi64x(b);
-	const __m128i x1 = _mm_sllv_epi64(bb, _mm_set_epi64x(0, 1));
-	const __m128i x2 = _mm_sllv_epi64(bb, _mm_set_epi64x(2, 3));
-	const __m128i x3 = _mm_sllv_epi64(bb, _mm_set_epi64x(4, 5));
-	const __m128i x4 = _mm_sllv_epi64(bb, _mm_set_epi64x(6, 7));
-	const int32_t y1 = _mm_movemask_epi8(x1);
-	const int32_t y2 = _mm_movemask_epi8(x2);
-	const int32_t y3 = _mm_movemask_epi8(x3);
-	const int32_t y4 = _mm_movemask_epi8(x4);
-
-	return (uint64_t(uint32_t(y1)) << 48) + (uint64_t(uint32_t(y2)) << 32) + (uint64_t(uint32_t(y3)) << 16) + uint64_t(uint32_t(y4));
-}
-
 uint64_t transpose_bitboard_pext(uint64_t x) {
-	//ˆø”‚ª8x8 bitboard‚¾‚Æ‚µ‚ÄA“]’u‚µ‚Ä•Ô‚·B
+	//å¼•æ•°ãŒ8x8 bitboardã ã¨ã—ã¦ã€è»¢ç½®ã—ã¦è¿”ã™ã€‚
 
 	x = (_pext_u64(x, 0xAAAA'AAAA'AAAA'AAAAULL) << 32) | _pext_u64(x, ~0xAAAA'AAAA'AAAA'AAAAULL);
 	x = (_pext_u64(x, 0xAAAA'AAAA'AAAA'AAAAULL) << 32) | _pext_u64(x, ~0xAAAA'AAAA'AAAA'AAAAULL);
@@ -95,9 +79,8 @@ void unittest(const uint64_t seed, const uint64_t iter) {
 		const uint64_t a = rnd();
 		const uint64_t b1 = transpose_bitboard_basic(a);
 		const uint64_t b2 = transpose_bitboard_avx2(a);
-		const uint64_t b3 = transpose_bitboard_sse2(a);
-		const uint64_t b4 = transpose_bitboard_pext(a);
-		assert(b1 == b2 && b1 == b3 && b1 == b4);
+		const uint64_t b3 = transpose_bitboard_pext(a);
+		assert(b1 == b2 && b1 == b3);
 	}
 }
 
@@ -140,13 +123,11 @@ void bench_transpose_l_##name() {\
 
 DEF_BENCH_TRANSPOSE_T(basic)
 DEF_BENCH_TRANSPOSE_T(avx2)
-DEF_BENCH_TRANSPOSE_T(sse2)
 DEF_BENCH_TRANSPOSE_T(pext)
 
 
 DEF_BENCH_TRANSPOSE_L(basic)
 DEF_BENCH_TRANSPOSE_L(avx2)
-DEF_BENCH_TRANSPOSE_L(sse2)
 DEF_BENCH_TRANSPOSE_L(pext)
 
 int main() {
@@ -155,12 +136,10 @@ int main() {
 
 	bench_transpose_t_basic();
 	bench_transpose_t_avx2();
-	bench_transpose_t_sse2();
 	bench_transpose_t_pext();
 
 	bench_transpose_l_basic();
 	bench_transpose_l_avx2();
-	bench_transpose_l_sse2();
 	bench_transpose_l_pext();
 
 	return 0;
