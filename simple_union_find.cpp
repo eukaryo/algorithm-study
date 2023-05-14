@@ -24,10 +24,10 @@ public:
 		}
 	}
 	
-	void make_set() {
+	void increment() {
 		const int64_t N = v.size();
 		v.push_back(N);
-		size[N] = 1;
+		size.push_back(1);
 		tree_num++;
 	}
 
