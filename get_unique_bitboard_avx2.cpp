@@ -66,6 +66,25 @@ uint64_t transpose(uint64_t b) {
 	return b;
 }
 
+//uint64_t transpose(uint64_t b)
+//{
+//	__m256i	v = _mm256_sllv_epi64(_mm256_broadcastq_epi64(_mm_cvtsi64_si128(b)), _mm256_set_epi64x(0, 1, 2, 3));
+//	return ((uint64_t) _mm256_movemask_epi8(v) << 32)
+//		| (uint32_t)_mm256_movemask_epi8(_mm256_slli_epi64(v, 4));
+//}
+
+uint64_t get_unique_naive(const uint64_t b) {
+	uint64_t answer = b;
+	for (uint32_t i = 1; i <= 7; ++i) {
+		uint64_t candidate = b;
+		if (i & 1)candidate = horizontal_mirror(candidate);
+		if (i & 2)candidate = vertical_mirror(candidate);
+		if (i & 4)candidate = transpose(candidate);
+		answer = std::min(answer, candidate);
+	}
+	return answer;
+}
+
 uint64_t symmetry_naive(const uint32_t s, uint64_t b) {
 
 	uint64_t answer = b;
@@ -85,6 +104,66 @@ uint64_t get_unique_naive(const uint64_t b) {
 		const uint64_t new_code = symmetry_naive(i, b);
 		answer = std::min(answer, new_code);
 	}
+
+	return answer;
+}
+
+
+uint64_t get_unique_Graycode(const uint64_t b) {
+	uint64_t answer = b;
+	const uint64_t code001 = horizontal_mirror(b);
+	answer = std::min(answer, code001);
+	const uint64_t code011 = vertical_mirror(code001);
+	answer = std::min(answer, code011);
+	const uint64_t code010 = horizontal_mirror(code011);
+	answer = std::min(answer, code010);
+	const uint64_t code110 = transpose(code010);
+	answer = std::min(answer, code110);
+	const uint64_t code111 = horizontal_mirror(code110);
+	answer = std::min(answer, code111);
+	const uint64_t code101 = vertical_mirror(code111);
+	answer = std::min(answer, code101);
+	const uint64_t code100 = horizontal_mirror(code101);
+	answer = std::min(answer, code100);
+	return answer;
+}
+
+uint64_t get_unique_Graycode2(const uint64_t b) {
+	uint64_t answer = b;
+	const uint64_t code100 = transpose(b);
+	answer = std::min(answer, code100);
+	const uint64_t code001 = horizontal_mirror(b);
+	answer = std::min(answer, code001);
+	const uint64_t code101 = horizontal_mirror(code100);
+	answer = std::min(answer, code101);
+	const uint64_t code011 = vertical_mirror(code001);
+	answer = std::min(answer, code011);
+	const uint64_t code111 = vertical_mirror(code101);
+	answer = std::min(answer, code111);
+	const uint64_t code010 = horizontal_mirror(code011);
+	answer = std::min(answer, code010);
+	const uint64_t code110 = horizontal_mirror(code111);
+	answer = std::min(answer, code110);
+	return answer;
+}
+
+uint64_t get_unique_Graycode3(const uint64_t b) {
+	uint64_t answer = b;
+
+	const uint64_t code100 = transpose(b);
+	answer = std::min(answer, code100);
+	const uint64_t code001 = horizontal_mirror(b);
+	answer = std::min(answer, code001);
+	const uint64_t code010 = vertical_mirror(b);
+	answer = std::min(answer, code010);
+	const uint64_t code101 = horizontal_mirror(code100);
+	answer = std::min(answer, code101);
+	const uint64_t code011 = horizontal_mirror(code010);
+	answer = std::min(answer, code011);
+	const uint64_t code110 = vertical_mirror(code100);
+	answer = std::min(answer, code110);
+	const uint64_t code111 = vertical_mirror(code101);
+	answer = std::min(answer, code111);
 
 	return answer;
 }
@@ -919,10 +998,16 @@ DEF_BENCH_REV_L(naive)
 DEF_BENCH_REV_L(simd)
 
 DEF_BENCH_UNIQUE_T(naive)
+DEF_BENCH_UNIQUE_T(Graycode)
+DEF_BENCH_UNIQUE_T(Graycode2)
+DEF_BENCH_UNIQUE_T(Graycode3)
 DEF_BENCH_UNIQUE_T(avx2_1)
 DEF_BENCH_UNIQUE_T(avx2_2)
 
 DEF_BENCH_UNIQUE_L(naive)
+DEF_BENCH_UNIQUE_L(Graycode)
+DEF_BENCH_UNIQUE_L(Graycode2)
+DEF_BENCH_UNIQUE_L(Graycode3)
 DEF_BENCH_UNIQUE_L(avx2_1)
 DEF_BENCH_UNIQUE_L(avx2_2)
 
@@ -931,9 +1016,15 @@ int main() {
 	unittest_unique();
 
 	bench_unique_l_naive();
+	bench_unique_l_Graycode();
+	bench_unique_l_Graycode2();
+	bench_unique_l_Graycode3();
 	bench_unique_l_avx2_1();
 	bench_unique_l_avx2_2();
 	bench_unique_t_naive();
+	bench_unique_t_Graycode();
+	bench_unique_t_Graycode2();
+	bench_unique_t_Graycode3();
 	bench_unique_t_avx2_1();
 	bench_unique_t_avx2_2();
 
